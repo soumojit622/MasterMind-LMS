@@ -1,101 +1,59 @@
-import Image from "next/image";
+import { UserButton } from "@clerk/nextjs";
+import DashboardHeader from "./dashboard/_components/DashboardHeader";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="relative min-h-screen bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.3)_0%,transparent_70%)] overflow-hidden">
+      <DashboardHeader />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Floating Blur Drops for Extra Style */}
+      <div className="absolute inset-0">
+        <div className="absolute -top-20 left-1/3 w-72 h-72 bg-cyan-400 opacity-30 blur-3xl rounded-full"></div>
+        <div className="absolute -bottom-24 right-1/4 w-96 h-96 bg-orange-400 opacity-30 blur-3xl rounded-full"></div>
+        <div className="absolute top-1/4 left-10 w-48 h-48 bg-blue-500 opacity-25 blur-3xl rounded-full"></div>
+        <div className="absolute bottom-1/3 right-16 w-64 h-64 bg-purple-400 opacity-30 blur-3xl rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-red-400 opacity-20 blur-3xl rounded-full"></div>
+      </div>
+
+      <section className="relative flex flex-col items-center justify-center min-h-screen py-16 px-6 text-center">
+        <div className="max-w-screen-lg mx-auto">
+          {/* Heading with Gradient Effect */}
+          <h1 className="mb-6 text-5xl font-extrabold leading-tight sm:text-6xl lg:text-7xl text-transparent bg-clip-text bg-[linear-gradient(to_right,#06b6d4,#3b82f6,#f97316,#ef4444)]">
+            AI-Powered Exam <br />
+            <span className="text-gray-900 dark:text-white">
+              Prep Material Generator
+            </span>
+          </h1>
+
+          {/* Subtext */}
+          <p className="mb-8 text-lg font-medium text-gray-600 dark:text-gray-300 sm:text-xl sm:px-12 xl:px-36 animate-fadeIn">
+            Your ultimate AI companion for generating tailored exam preparation
+            materials with ease.
+          </p>
+
+          {/* CTA Button */}
+          <div className="flex flex-col mb-8 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-6">
+            <a
+              href="/dashboard"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full shadow-lg transition-all transform hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-cyan-300 animate-fadeInUp"
+            >
+              Get Started
+              <svg
+                className="ml-3 w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
     </div>
   );
 }
