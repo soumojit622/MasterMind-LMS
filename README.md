@@ -22,9 +22,9 @@
 ✔️ **Interactive Notes** – Well-structured study materials in an intuitive UI.  
 ✔️ **User Authentication** – Secure login & authentication with **Clerk**.  
 ✔️ **Dashboard Insights** – Track learning progress easily.  
-✔️ **Dark Mode Support** – Comfortable reading experience.  
+✔️ **Dark Mode Support** – Comfortable reading experience.(Coming Soon)  
 ✔️ **Modern UI/UX** – Built with **Tailwind CSS & ShadCN UI**.  
-✔️ **Mobile-Friendly** – Fully responsive for all devices.  
+✔️ **Mobile-Friendly** – Fully responsive for all devices.(Coming Soon)  
 
 ---
 
